@@ -5,6 +5,9 @@ function stopDefAction(evt) {
     evt.preventDefault();
   }
 function go() {
+    
+
+
     if (document.getElementById("user").value =="sm2" && document.getElementById("pass").value == "ulnm20"){ 
             
             sessionStorage.setItem("id","sm2");
@@ -468,6 +471,8 @@ function go() {
         sessionStorage.setItem("id","usuario20");
         qr.style.display = "block";
         iniciodesesion.style.display = "none";
+    }else{
+        alert("Usuario o contraseña erroneos");
     }
         
 } 
