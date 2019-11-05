@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<link rel="apple-touch-icon" href="/icons/wea.png">
+<style>
+    body {
+      font-family: 'Ropa Sans', sans-serif;
+      color: #333;
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+    #githubLink {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      color: #2D99FF;
+    }
+    h1 {
+      margin: 10px 0;
+      font-size: 40px;
+    }
+    #loadingMessage {
+      text-align: center;
+      padding: 40px;
+      background-color: #eee;
+    }
+    #canvas {
+      width: 100%;
+    }
+    #output {
+      margin-top: 20px;
+      background: #eee;
+      padding: 10px;
+      padding-bottom: 0;
+    }
+    #output div {
+      padding-bottom: 10px;
+      word-wrap: break-word;
+    }
+    #noQRFound {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+<div id="datosdeinicio" class="datos">
+
+<input id="user" type="text" placeholder="Ususario"> <br> <br>
+<input id="pass" type="password" placeholder="Contraseña"> <br> <br>
+
+
+<button class="boton" id="iniciodesesion" onclick="go()">login</button>
+ 
+</div>
+
+
+
+<!-- camara div -->
+<div id="camaraqr">
+  
+    <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+    <canvas id="canvas" hidden></canvas>
+    <div id="output" hidden>
+      <div id="outputMessage">No QR code detected.</div>
+      <div hidden><b>Data:</b> <span id="outputData"></span></div>
+    </div>
+    <div id="lsoutput"></div>
+    <div class="botones" id="Checkstorage">
+      <button onclick="localStorage.clear()">clear</button>
+      <a class="cerrar" id="close" href="index.html">Cerrar sesion</a>
+      <button id="savetxt">txt</button>
+    </div>
+    
+  </div>
+
+
+
+
+<script src="sesion.js"></script>
+<script src="Camera.js"></script>
+  
+  <script>document.getElementById("savetxt").addEventListener("click", function saveStaticDataToFile() {
+      var pom = document.createElement('a');
+      
+
+      var log = sessionStorage.getItem("id");
+      const Name = "avr";
+
+      for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+      
+        log = log + ", " + value;
+      
+    }
+
+
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(log));
+    pom.setAttribute('download', Name);
+
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    }
+    else {
+        
+    }
+  });
+  </script>
+<script src="app.js"></script>
+<script src="jsQR.js"></script>
+</body>
+</html>

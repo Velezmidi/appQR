@@ -1,0 +1,74 @@
+
+body{
+    background-color: #FDE5C7;
+}
+
+.datos{
+    background-color: #FFFFFF;
+    padding: 50px 20px;
+    box-shadow: 10px 10px 2px;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    box-sizing: content-box;
+    display: inline-block;
+  
+}
+.boton{
+    background-color: #E83655;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%);
+    border: none;
+    padding: 11px 28px;
+    font-size: 16px;
+}
+.boton:hover{
+    background-color: rgb(165, 40, 61);
+}
+
+button{
+    background-color: #E83655;
+    position: relative;
+    
+    border: none;
+    padding: 11px 28px;
+    font-size: 16px;
+}
+button:hover{
+    background-color: rgb(165, 40, 61);
+}
+.usuario{
+    
+    position: absolute;
+    top: 30px;
+}
+input{
+    border: none;
+    border-bottom: 2px solid #3A8441;
+   
+}
+.botones{
+    padding: 5px;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%);
+    width: 100%;
+    text-align: center;
+}
+
+.cerrar{
+    background-color: #E83655;
+    position: relative;
+    color: black;
+    border: none;
+    padding: 11px 28px;
+    font-size: 16px;   
+    text-decoration: none;
+    
+}
+.cerrar:hover{
+    background-color: rgb(165, 40, 61);
+}
+/*#E83655

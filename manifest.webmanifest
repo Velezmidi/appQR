@@ -1,0 +1,17 @@
+{
+    "short_name": "QRcam",
+    "name": "Camara de QR",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FDE5C7",
+    "theme_color": "#FDE5C7",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "srs": "/icons/wea.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        }
+    ]
+    
+}
