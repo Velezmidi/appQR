@@ -472,7 +472,7 @@ function go() {
         qr.style.display = "block";
         iniciodesesion.style.display = "none";
     }else{
-        alert("Usuario o contraseña erroneos");
+        alert("Datos incorrectos");
     }
         
 } 
