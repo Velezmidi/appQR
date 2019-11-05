@@ -44,9 +44,12 @@
           outputData.innerText = code.data;
           console.log("Found QR code", code.data);
 
-          localStorage.setItem("ID"+code.data, code.data);
+          localStorage.setItem(sessionStorage.getItem("id")+code.data, code.data);
           
-          alert("usuario registrado");
+          if (localStorage.getItem(sessionStorage.getItem("id")+code.data) != sessionStorage.getItem("id")+"") {
+            alert("usuario registrado");
+          }
+          
           
         } else {
           outputMessage.hidden = false;
