@@ -473,7 +473,9 @@ function go() {
         iniciodesesion.style.display = "none";
     }else{
         alert("Datos incorrectos");
+        return;
     }
+    startCamera()
         
 } 
 

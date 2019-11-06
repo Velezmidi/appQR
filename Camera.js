@@ -21,18 +21,20 @@
       canvas.stroke();
     }
     // Use facingMode: environment to attemt to get the front camera on phones
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
-      video.srcObject = stream;
-      video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
-      video.play();
-      requestAnimationFrame(tick);
-    });
+    function startCamera() {
+      navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
+        video.srcObject = stream;
+        video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+        video.play();
+        requestAnimationFrame(tick);
+      });
+    }
     function tick() {
       loadingMessage.innerText = "⌛ Loading video..."
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
         loadingMessage.hidden = true;
         canvasElement.hidden = false;
-        outputContainer.hidden = false;
+        document.getElementById("lsoutput").hidden = false;
         canvasElement.height = video.videoHeight;
         canvasElement.width = video.videoWidth;
         canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
@@ -45,9 +47,9 @@
           drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
           drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
           drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
-          outputMessage.hidden = true;
-          outputData.parentElement.hidden = false;
-          outputData.innerText = code.data;
+          // outputMessage.hidden = true;
+          // outputData.parentElement.hidden = false;
+          // outputData.innerText = code.data;
           if(code.data!="" && code.data !== lastCode){
             let arr = data[sessionStorage.getItem('id')];
             if (!arr) {
@@ -74,8 +76,8 @@
           
           
         } else {
-          outputMessage.hidden = false;
-          outputData.parentElement.hidden = true;
+          //outputMessage.hidden = false;
+          //outputData.parentElement.hidden = true;
         }
         
       }
