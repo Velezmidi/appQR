@@ -91,18 +91,20 @@
       
 
       var log = sessionStorage.getItem("id");
-      const Name = "avr";
+      const Name = "avr.json";
+      const json = {}
+      for (const key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+          const val = localStorage[key];
+          const arr = val.split(",");
+          json[key] = arr;
+        }
+      }
 
-      for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const value = localStorage.getItem(key);
-      
-        log = log + ", " + value;
-      
-    }
+     
 
 
-    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(log));
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(json)));
     pom.setAttribute('download', Name);
 
     if (document.createEvent) {

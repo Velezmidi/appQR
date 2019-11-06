@@ -6,6 +6,7 @@
     var outputMessage = document.getElementById("outputMessage");
     var outputData = document.getElementById("outputData");
     var Checkstorage = document.getElementById("Checkstorage");
+    var lastCode = "";
    
     function drawLine(begin, end, color) {
       canvas.beginPath();
@@ -43,8 +44,9 @@
           outputMessage.hidden = true;
           outputData.parentElement.hidden = false;
           outputData.innerText = code.data;
-          if(code.data!=""){
-            localStorage.setItem(sessionStorage.getItem("id")+code.data, code.data);
+          if(code.data!="" && code.data !== lastCode){
+            lastCode=code.data;
+            localStorage.setItem(sessionStorage.getItem("id"), localStorage.getItem(sessionStorage.getItem("id")) + "," + code.data);
             alert("usuario registrado");
           }
           console.log("Found QR code", code.data);
