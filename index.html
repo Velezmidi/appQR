@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -67,10 +68,7 @@
   
     <div id="loadingMessage">🎥 No se pudo acceder a la cámara</div>
     <canvas id="canvas" hidden></canvas>
-    <div id="output" hidden>
-      <div id="outputMessage">Ningún QR encontrado.</div>
-      <div hidden><b>Data:</b> <span id="outputData"></span></div>
-    </div>
+    
     <div id="lsoutput"></div>
     <div class="botones" id="Checkstorage">
       
@@ -96,6 +94,7 @@
 
     pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(storage));
     pom.setAttribute('download', Name);
+    pom.setAttribute('target', '_blank');
 
     if (document.createEvent) {
         var event = document.createEvent('MouseEvents');
