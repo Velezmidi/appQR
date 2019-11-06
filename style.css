@@ -25,13 +25,13 @@ body{
     border: none;
     padding: 11px 28px;
     font-size: 16px;
-    opacity: 0.6;
+    
     transition: 0.3s;
     color: #FFFFFF;
 }
 .boton:hover{
-    background-color: rgb(165, 40, 61);
-    opacity: 1;
+    background-color: #3A8441;
+   
 }
 
 button{
@@ -41,12 +41,12 @@ button{
     border: none;
     padding: 11px 28px;
     font-size: 16px;
-    opacity: 0.6;
+    
     transition: 0.3s;
 }
 button:hover{
-    background-color: rgb(165, 40, 61);
-    opacity: 1;
+    background-color: #3A8441;
+    
 }
 .usuario{
     
@@ -74,14 +74,15 @@ input:hover{
 .cerrar{
     background-color: #E83655;
     position: relative;
-    color: black;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 11px 28px;
     font-size: 16px;   
     text-decoration: none;
+    transition: 0.3s;
     
 }
 .cerrar:hover{
-    background-color: rgb(165, 40, 61);
+    background-color: #3A8441;
 }
 /*#E83655
